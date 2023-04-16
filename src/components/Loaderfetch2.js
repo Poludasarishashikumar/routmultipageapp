@@ -2,9 +2,9 @@ import React from 'react';
 import { useLoaderData } from 'react-router-dom';
 function Loaderfetch2(props) {
     const data=useLoaderData();  //used to load the closest loader data
-    if(data.isError){
-       return <p>{data.message}</p>
-    }
+    // if(data.isError){
+    //    return <p>{data.message}</p>
+    // }
     console.log(data); 
     return (
         <div>
@@ -26,7 +26,10 @@ export  async function loader()
           // console.log(response);
           if (!response.ok) {
             // throw new Error('Something went wrong!');
-            return{isError:true,message:'Could not fetch data.'};//one way to show error
+            // return{isError:true,message:'Could not fetch data.'};//one way to show error
+            throw new Response(JSON.stringify({message:'Could not fetch data'}),{
+                status:500,
+            });
           }
     
         //   const data = await response.json();
