@@ -7,6 +7,10 @@ function Home(props) {
             <p>
 This lets you to 
             <Link to='/new'>NewPage</Link>
+            </p> 
+            <p>
+This lets you to load details by the loader
+            <Link to='/load'>Click here</Link>
             </p>         
         </div>
     );

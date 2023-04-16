@@ -7,6 +7,7 @@ import Root from './components/Root';
 import ErrorPage from './components/ErrorPage';
 import Navigateus from './components/Navigateus';
 import Viewpage from './components/Viewpage';
+import Loaderfetch from './components/Loaderfetch';
 
 const router=createBrowserRouter(
   [
@@ -17,7 +18,8 @@ const router=createBrowserRouter(
     children:[
       {
         index:true,
-        element:<Home/>
+        element:<Home/>,
+       
       },
       {
         path:'new',
@@ -30,6 +32,20 @@ const router=createBrowserRouter(
       {
         path:'new/:pId',   //dynamic path
         element:<Viewpage/>
+      },
+      {
+        path:'load',
+        element:<Loaderfetch/>,
+        loader:async ()=>{
+          const response = await fetch('https://localhost:44325/api/Getstudents');
+          // console.log(response);
+          if (!response.ok) {
+            // throw new Error('Something went wrong!');
+          }
+    
+          const data = await response.json();
+          return data;
+        }
       }
     ]
   },

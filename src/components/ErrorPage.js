@@ -1,10 +1,13 @@
 import React from 'react';
+import Navigation from './Navigation';
 
 function ErrorPage(props) {
-    return (
+    return (<>
+        <Navigation/>
         <div>
             <p>This is an error page</p>
         </div>
+    </>
     );
 }
 
