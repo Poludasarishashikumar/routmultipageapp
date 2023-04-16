@@ -8,7 +8,8 @@ function ErrorPage(props) {
     let message="Something went wrong";
     if(error.status===500)
     {
-        message=JSON.parse(error.data).message;
+        // message=JSON.parse(error.data).message;
+        message=error.data.message;
     }
     if(error.status===404)
     {
@@ -18,6 +19,7 @@ function ErrorPage(props) {
     return (<>
         <Navigation/>
         <div title={title}>
+            <h1>{title}</h1>
             <p>{message}</p>
         </div>
     </>
