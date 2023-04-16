@@ -8,12 +8,13 @@ import ErrorPage from './components/ErrorPage';
 import Navigateus from './components/Navigateus';
 import Viewpage from './components/Viewpage';
 import Loaderfetch from './components/Loaderfetch';
+import Loaderfetch2,{loader as fetchLoader} from './components/Loaderfetch2';
 
 const router=createBrowserRouter(
   [
   {
     path:'/',
-    element:<Root/>,
+    element:<Root/>,          //the loader data from the children cannot be accessed on this component
     errorElement:<ErrorPage/>,
     children:[
       {
@@ -34,8 +35,13 @@ const router=createBrowserRouter(
         element:<Viewpage/>
       },
       {
+        path:'load2',
+        element:<Loaderfetch2/>,
+        loader:fetchLoader,
+      },
+      {
         path:'load',
-        element:<Loaderfetch/>,
+        element:<Loaderfetch/>,      
         loader:async ()=>{
           const response = await fetch('https://localhost:44325/api/Getstudents');
           // console.log(response);
