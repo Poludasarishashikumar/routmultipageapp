@@ -1,7 +1,7 @@
 import React, { useState } from 'react';
-import { useParams,Link, json,useLoaderData } from 'react-router-dom';
+import { useParams,Link, json,useRouteLoaderData } from 'react-router-dom';
 function Showdetailspage(props) {
-    const [data,setData]=useState([useLoaderData()]);
+    const [data,setData]=useState([useRouteLoaderData('data-detail')]);
 
 //    const data=useLoaderData();
     console.log(data);   
@@ -20,7 +20,7 @@ function Showdetailspage(props) {
                 </div>
                 
             ))}
-        
+         <p><Link to='edit'>Edit</Link></p>
                <p><Link to='..'>Back</Link></p>
             </div>
         );

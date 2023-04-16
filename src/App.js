@@ -11,6 +11,7 @@ import Loaderfetch from './components/Loaderfetch';
 import Loaderfetch2,{loader as fetchLoader} from './components/Loaderfetch2';
 import Showdetailspage,{loader as getLoader} from './components/Showdetailspage';
 import RootLoad from './components/RootLoad';
+import Editdata from './components/Editdata';
 
 const router=createBrowserRouter(
   [
@@ -62,12 +63,24 @@ const router=createBrowserRouter(
               return data;
             },
           },
+          {
+            path:':pId',
+            id:'data-detail',
+            loader:getLoader,
+            children:[
+
               {
                 
-                path:':pId',   //dynamic path
+                index:true,   //dynamic path
                 element:<Showdetailspage/>,
-                loader:getLoader
+                
               },
+              {
+                path:'edit',
+                element:<Editdata/>,
+              }
+            ]
+          },
             
           
         ]
