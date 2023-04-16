@@ -24,7 +24,17 @@ function Navigation(props) {
                 isActive ? classes.active : undefined
               }
             >
-              Events
+              NewPage
+            </NavLink>
+          </li>
+          <li>
+            <NavLink
+              to="/nev"
+              className={({ isActive }) =>
+                isActive ? classes.active : undefined
+              }
+            >
+              Navigation
             </NavLink>
           </li>
           

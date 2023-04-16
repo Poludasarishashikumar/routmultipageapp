@@ -6,9 +6,10 @@ import NewPage from './components/Newpage';
 import Root from './components/Root';
 import ErrorPage from './components/ErrorPage';
 import Navigateus from './components/Navigateus';
+import Viewpage from './components/Viewpage';
 
-
-const router=createBrowserRouter([
+const router=createBrowserRouter(
+  [
   {
     path:'/',
     element:<Root/>,
@@ -25,6 +26,10 @@ const router=createBrowserRouter([
       {
         path:'nev',
         element:<Navigateus/>
+      },
+      {
+        path:'new/:pId',   //dynamic path
+        element:<Viewpage/>
       }
     ]
   },

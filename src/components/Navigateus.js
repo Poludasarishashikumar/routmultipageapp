@@ -10,7 +10,7 @@ const btnHandler=(event)=>{
     return (
         <div>
            <p>Navigation by usenavigate</p>
-           <button  onClick={btnHandler}></button> 
+           <button  onClick={btnHandler}>Navigate to home</button> 
         </div>
     );
 }
