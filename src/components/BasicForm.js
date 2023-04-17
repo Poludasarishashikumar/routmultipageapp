@@ -1,14 +1,15 @@
 import React from 'react';
 import classes from './Form.module.css';
-function Form({method,data}) {
+import { Form } from 'react-router-dom';
+function BasicForm({method,data}) {
     return (
-        <div>
+        <Form method='post' className={classes.form}>
              <p>
         <label htmlFor="title">FirstName</label>
         <input
           id="title"
           type="text"
-          name="title"
+          name="firstName"
           required
           defaultValue={data ? data.firstName:''}
         />
@@ -18,7 +19,7 @@ function Form({method,data}) {
         <input
           id="title"
           type="text"
-          name="title"
+          name="lastName"
           required
           defaultValue= {data ? data.lastName:''}
         />
@@ -28,7 +29,7 @@ function Form({method,data}) {
         <input
           id="title"
           type="text"
-          name="title"
+          name="email"
           required
           defaultValue= {data ? data.email:''}
         />
@@ -42,8 +43,8 @@ function Form({method,data}) {
            Save
         </button>
       </div>
-        </div>
+      </Form>
     );
 }
 
-export default Form;
+export default BasicForm;
